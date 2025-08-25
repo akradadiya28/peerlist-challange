@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Peerlist Interaction Design Challenge
 
-## Getting Started
+This project contains my submissions for the Peerlist Interaction Design Challenge. It is built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-First, run the development server:
+### Getting Started
 
+Prerequisites:
+- Node.js 18+
+- pnpm installed globally
+
+Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the development server:
+```bash
+pnpm dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build for production:
+```bash
+pnpm build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Preview the production build:
+```bash
+pnpm start
+```
 
-## Learn More
+### Tech Stack
+- Next.js 15 (App Router, Turbopack)
+- TypeScript
+- Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+### Project Structure
+```text
+src/
+  app/
+    day-1/           # Day 1 submission page
+    layout.tsx       # Root layout
+    page.tsx         # Landing page
+  components/
+    ui/
+      animated-tooltip.tsx  # Reusable animated avatar tooltip component
+  lib/
+    utils.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Day 1 – Animated Avatar Stack
+Design and build an animated avatar stack that goes beyond the basics. Think of how avatars can come alive through shapes, colors, gradients, transitions, and motion. Don’t be afraid to break conventions. We’re sharing one example to get you started, but that’s just a spark. Your stack could flip, slide, bounce, fade, or completely reinvent the concept of an avatar group. The only rule: make it fun, creative, and uniquely yours.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+How to view:
+- Visit `/day-1` in the running app.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Credits
+- Peerlist Logo and challenge content belong to Peerlist.
