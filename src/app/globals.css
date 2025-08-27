@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match the design brief for OTP component */
+  /* Updated color tokens to match user's existing design system */
   --background: oklch(1 0 0);
   --foreground: oklch(0.3 0 0);
   --card: oklch(0.98 0 0);
@@ -131,7 +131,7 @@
   }
 }
 
-/* Updated custom animations for cleaner OTP input states */
+/* Added user's existing OTP animations */
 @keyframes shake {
   0%,
   100% {
@@ -188,4 +188,126 @@
 
 .animate-focus-scale {
   animation: focus-scale 0.2s ease-in-out forwards;
+}
+
+/* Enhanced card transition animations and effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(0.145 0 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(0.269 0 0);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.55 0.15 264);
+}
+
+/* Enhanced selection and focus styles */
+::selection {
+  background-color: oklch(0.55 0.15 264 / 0.3);
+  color: oklch(0.985 0 0);
+}
+
+*:focus-visible {
+  outline: 2px solid oklch(0.55 0.15 264);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions and backdrop blur fallbacks */
+html {
+  scroll-behavior: smooth;
+}
+
+@supports not (backdrop-filter: blur(12px)) {
+  .backdrop-blur-xl {
+    background-color: oklch(0.145 0 0 / 0.8);
+  }
+}
+
+/* Card transition specific styles */
+.card-transition-enter {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+}
+
+.card-transition-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }

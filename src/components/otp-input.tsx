@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 type CellVisual = "default" | "active" | "filled" | "success" | "error";
@@ -25,10 +25,7 @@ export function OTPInput({
   const [visuals, setVisuals] = useState<CellVisual[]>(
     () => Array(length).fill("default")
   );
-  const [status, setStatus] = useState<"idle" | "valid" | "invalid">("idle"); // global
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
-
-  const isComplete = useMemo(() => values.every((v) => v !== ""), [values]);
 
   // Focus first input on mount
   useEffect(() => {
@@ -54,7 +51,6 @@ export function OTPInput({
   const resetAll = () => {
     setValues(Array(length).fill(""));
     setVisuals(Array(length).fill("default"));
-    setStatus("idle");
     inputRefs.current[0]?.focus();
   };
 
@@ -65,11 +61,9 @@ export function OTPInput({
     if (onValidate) {
       const ok = await onValidate(otp);
       if (ok) {
-        setStatus("valid");
         setVisuals(Array(length).fill("success"));
         onComplete?.(otp);
       } else {
-        setStatus("invalid");
         setVisuals(Array(length).fill("error"));
         // brief shake/red, then reset
         setTimeout(() => resetAll(), 1200);
@@ -85,7 +79,7 @@ export function OTPInput({
     if (value.length > 1) return;
     if (value && !/^\d$/.test(value)) return;
 
-    setStatus("idle"); // typing clears global status
+    // typing clears global status
 
     // update value + mark cell as filled or default
     const nextValues = [...values];
@@ -116,13 +110,11 @@ export function OTPInput({
       if (values[index]) {
         // clear current without moving
         setCell(index, "", "active");
-        setStatus("idle");
       } else if (index > 0) {
         // move left and clear previous
         const prevIdx = index - 1;
         setCell(prevIdx, "", "active");
         inputRefs.current[prevIdx]?.focus();
-        setStatus("idle");
       }
     } else if (e.key === "ArrowLeft" && index > 0) {
       inputRefs.current[index - 1]?.focus();

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { OTPInput } from "@/components/otp-input";
+import Image from "next/image";
 
 export default function Home() {
   const [otpValue, setOtpValue] = useState("");
@@ -58,7 +59,7 @@ export default function Home() {
         <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-lg items-center justify-center p-6">
           <div className="w-full rounded-2xl bg-white shadow-xl ring-1 ring-gray-200 p-8 text-center space-y-6">
             <div className="flex justify-center">
-              <img
+              <Image
                 src="/peerlist-logo-full-light.svg"
                 alt="Peerlist Logo"
                 className="w-45 h-20 object-contain"
