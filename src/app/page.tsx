@@ -37,13 +37,13 @@ const challengeDays = [
   },
   {
     id: 4,
-    title: "Coming Soon",
-    description: "The next challenge awaits! Stay tuned for more interactive design challenges.",
-    status: "upcoming",
-    difficulty: "TBD",
-    icon: "🚀",
-    path: "#",
-    features: ["Coming soon", "Stay tuned", "More challenges", "Interactive design"]
+    title: "Interactive Folder",
+    description: "Design a folder interaction component that responds to user actions with smooth, engaging motion. Focus on how the interaction communicates state changes - opening, closing, hovering.",
+    status: "completed",
+    difficulty: "Advanced",
+    icon: "📁",
+    path: "/day-4",
+    features: ["Smooth animations", "State transitions", "Visual feedback", "Interactive elements"]
   },
   {
     id: 5,
@@ -187,7 +187,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-2 text-emerald-400">
               <Trophy className="w-5 h-5" />
-              <span className="text-sm font-medium">3 Completed</span>
+              <span className="text-sm font-medium">4 Completed</span>
             </div>
             <div className="flex items-center gap-2 text-zinc-400">
               <Calendar className="w-5 h-5" />
