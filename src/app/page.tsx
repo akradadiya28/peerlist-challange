@@ -47,13 +47,13 @@ const challengeDays = [
   },
   {
     id: 5,
-    title: "Coming Soon",
-    description: "The next challenge awaits! Stay tuned for more interactive design challenges.",
-    status: "upcoming",
-    difficulty: "TBD",
-    icon: "🎨",
-    path: "#",
-    features: ["Coming soon", "Stay tuned", "More challenges", "Interactive design"]
+    title: "Progressive Input Stack",
+    description: "Design a progressive input stack interaction that guides users seamlessly through a multi-step process. Focus on making transitions fluid and visually engaging.",
+    status: "completed",
+    difficulty: "Advanced",
+    icon: "📝",
+    path: "/day-5",
+    features: ["Multi-step forms", "Smooth transitions", "Visual feedback", "Progress tracking"]
   },
   {
     id: 6,
@@ -187,7 +187,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-2 text-emerald-400">
               <Trophy className="w-5 h-5" />
-              <span className="text-sm font-medium">4 Completed</span>
+              <span className="text-sm font-medium">5 Completed</span>
             </div>
             <div className="flex items-center gap-2 text-zinc-400">
               <Calendar className="w-5 h-5" />

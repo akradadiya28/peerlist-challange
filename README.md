@@ -42,6 +42,7 @@ src/
     day-2/           # Day 2 submission page
     day-3/           # Day 3 submission page
     day-4/           # Day 4 submission page
+    day-5/           # Day 5 submission page
     layout.tsx       # Root layout
     page.tsx         # Landing page
   components/
@@ -188,6 +189,81 @@ How to view:
 Implementation Notes:
 - Page: `src/app/day-4/page.tsx`
 - Animations: Framer Motion with spring physics and custom easing
+- Accessibility: Full keyboard support and reduced motion preferences
+- Performance: Optimized animations with proper state management
+
+### Day 5 – Progressive Input Stack
+Design a progressive input stack interaction that guides users seamlessly through a multi-step process. Focus on making transitions fluid and visually engaging, while ensuring important information remains accessible at each stage.
+
+**Key Features:**
+- **Multi-Step Process**: 4 comprehensive steps (Personal Info → Location → Professional → Education)
+- **Progressive Validation**: Real-time validation with required field checking before progression
+- **Smooth Step Transitions**: Spring-based animations with staggered entrance effects
+- **Visual Progress Tracking**: Animated progress bars and step completion indicators
+- **Dynamic Form Elements**: Interactive skills and achievements with add/remove functionality
+
+**Technical Implementation:**
+- **State Management**: React hooks for complex form state and validation logic
+- **Animation System**: Framer Motion with spring physics for natural transitions
+- **Form Validation**: Smart validation that prevents progression until required fields are complete
+- **Accessibility**: Reduced motion support, proper ARIA labels, and keyboard navigation
+- **Performance**: Optimized animations with proper easing curves and transition timing
+
+**Animation Details:**
+- **Step Transitions**: Smooth slide animations with spring physics (stiffness: 300)
+- **Progress Indicators**: Animated progress bars that fill as steps are completed
+- **Icon Transformations**: Step icons animate to checkmarks when completed
+- **Staggered Entrances**: Step elements animate in sequence with individual delays
+- **Hover Effects**: Interactive elements with scale and color transitions
+
+**Interactive Elements:**
+- **Step Navigation**: Click to navigate between steps with smooth transitions
+- **Form Validation**: Real-time feedback on required fields with visual indicators
+- **Dynamic Content**: Skills and achievements with animated tag management
+- **Progress Visualization**: Color-coded steps with animated progress lines
+- **Success Celebration**: Beautiful completion screen with profile summary
+
+**Color Scheme:**
+- **Step 1 (Personal)**: Emerald to Green gradients
+- **Step 2 (Location)**: Blue to Cyan gradients
+- **Step 3 (Professional)**: Purple to Pink gradients
+- **Step 4 (Education)**: Purple to Pink gradients
+- **Background**: Dark theme with subtle grid patterns and blur effects
+
+**Form Features:**
+- **Personal Information**: First name, last name, email, phone with validation
+- **Location Details**: City, country, timezone with required field checking
+- **Professional Background**: Company, role, experience, and dynamic skills management
+- **Education & Skills**: Degree, institution, graduation year, and achievements
+
+**Components Used:**
+- `ProgressiveInputStack`: Main component with step management and form logic
+- `PersonalInfoStep`: Personal information form with validation
+- `LocationStep`: Location details form with required field checking
+- `ProfessionalStep`: Professional background with dynamic skills input
+- `EducationStep`: Education details with achievements management
+- `InputField`: Reusable input component with icons and validation
+- `SuccessView`: Completion screen with profile summary and actions
+
+**User Experience:**
+- **Progressive Disclosure**: Information revealed step-by-step to reduce cognitive load
+- **Visual Feedback**: Clear progress indicators and step completion states
+- **Error Prevention**: Required field validation prevents incomplete submissions
+- **Success Flow**: Celebration screen with profile summary and next actions
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+
+How to view:
+- Visit `/day-5` in the running app
+- Navigate through the 4-step process with smooth animations
+- Observe real-time validation and progress tracking
+- Add/remove skills and achievements dynamically
+- Complete the form to see the success celebration screen
+- Use the reset functionality to start over
+
+Implementation Notes:
+- Page: `src/app/day-5/page.tsx`
+- Animations: Framer Motion with spring physics and custom easing
+- Validation: Smart form validation with visual feedback
 - Accessibility: Full keyboard support and reduced motion preferences
 - Performance: Optimized animations with proper state management
 
