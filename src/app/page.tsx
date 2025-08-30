@@ -57,13 +57,13 @@ const challengeDays = [
   },
   {
     id: 6,
-    title: "Coming Soon",
-    description: "The next challenge awaits! Stay tuned for more interactive design challenges.",
-    status: "upcoming",
-    difficulty: "TBD",
-    icon: "⚡",
-    path: "#",
-    features: ["Coming soon", "Stay tuned", "More challenges", "Interactive design"]
+    title: "Warp Overlay",
+    description: "Design an interactive overlay that smoothly expands, and transitions between states. Focus on making the motion feel natural, and responsive.",
+    status: "completed",
+    difficulty: "Advanced",
+    icon: "🌀",
+    path: "/day-6",
+    features: ["Smooth expansion", "State transitions", "Natural motion", "Responsive design"]
   },
   {
     id: 7,
@@ -185,10 +185,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <div className="flex items-center gap-2 text-emerald-400">
-              <Trophy className="w-5 h-5" />
-              <span className="text-sm font-medium">5 Completed</span>
-            </div>
+                          <div className="flex items-center gap-2 text-emerald-400">
+                <Trophy className="w-5 h-5" />
+                <span className="text-sm font-medium">6 Completed</span>
+              </div>
             <div className="flex items-center gap-2 text-zinc-400">
               <Calendar className="w-5 h-5" />
               <span className="text-sm font-medium">7 Days Total</span>

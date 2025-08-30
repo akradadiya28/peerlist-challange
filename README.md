@@ -43,6 +43,7 @@ src/
     day-3/           # Day 3 submission page
     day-4/           # Day 4 submission page
     day-5/           # Day 5 submission page
+    day-6/           # Day 6 submission page
     layout.tsx       # Root layout
     page.tsx         # Landing page
   components/
@@ -266,6 +267,90 @@ Implementation Notes:
 - Validation: Smart form validation with visual feedback
 - Accessibility: Full keyboard support and reduced motion preferences
 - Performance: Optimized animations with proper state management
+
+### Day 6 – Warp Overlay
+Design an interactive overlay that smoothly expands, and transitions between states. Challenge yourself to be creative. Focus on making the motion feel natural, and responsive.
+
+**Key Features:**
+- **3D Warp Effect**: Overlay opens with dramatic 3D rotation (rotateX, rotateY) for cinematic entrance
+- **Dynamic Sizing**: Three size states (small, medium, large) with smooth transitions
+- **6 Overlay Types**: Media Gallery, Music Player, Video Controls, Settings, Search, Creative Tools
+- **Particle Systems**: Floating emerald particles that burst from the center on opening
+- **Smooth State Transitions**: Natural motion using spring physics with custom stiffness and damping
+
+**Technical Implementation:**
+- **3D Transformations**: Advanced CSS transforms with rotateX, rotateY, and scale effects
+- **Spring Physics**: Framer Motion with custom stiffness (300) and damping (25) for natural motion
+- **State Management**: React hooks for overlay states, sizing, and content management
+- **Performance**: Optimized animations with proper easing curves and transition timing
+- **Accessibility**: Reduced motion support, keyboard navigation (Esc key), and proper ARIA labels
+
+**Animation Details:**
+- **Opening Animation**: 3D warp effect with scale (0.8→1), rotation (-15°→0°), and Y translation (50px→0)
+- **Size Transitions**: Smooth resizing between small (320x256), medium (384x320), and large (448x384)
+- **Particle Effects**: 12 particles with staggered animations, expanding outward in circular patterns
+- **Hover Interactions**: Cards lift (y: -4px) and scale (1.05) with smooth transitions
+- **Content Animations**: Staggered entrance effects with individual delays for each element
+
+**Interactive Elements:**
+- **Trigger Cards**: 6 interactive cards with hover effects and color-coded themes
+- **Size Toggle**: Dynamic resizing button that cycles through size states
+- **Close Button**: Smooth closing with reverse 3D warp effect
+- **Backdrop Click**: Intuitive closing by clicking outside the overlay
+- **Keyboard Support**: Escape key for accessibility and convenience
+
+**Color Scheme & Themes:**
+- **Media Gallery**: Blue to Cyan gradients
+- **Music Player**: Purple to Pink gradients
+- **Video Controls**: Red to Orange gradients
+- **Settings Panel**: Gray to Slate gradients
+- **Search & Filter**: Emerald to Green gradients
+- **Creative Tools**: Yellow to Orange gradients
+
+**Content Types:**
+- **Media Gallery**: Grid layout with upload/browse functionality
+- **Music Player**: Playback controls with progress bar and volume
+- **Video Controls**: Video player controls with play/pause/maximize
+- **Settings Panel**: Toggle switches for preferences
+- **Search & Filter**: Search input with recent searches
+- **Creative Tools**: Color picker, brush tools, shapes, and text tools
+
+**Components Used:**
+- `WarpOverlay`: Main component with overlay management and state logic
+- `MediaGalleryContent`: Media grid with upload functionality
+- `MusicPlayerContent`: Music controls with visual feedback
+- `VideoControlsContent`: Video player interface
+- `SettingsContent`: Settings panel with toggles
+- `SearchContent`: Search interface with recent items
+- `CreativeToolsContent`: Creative tool grid with actions
+
+**User Experience:**
+- **Cinematic Opening**: Dramatic 3D entrance that draws attention
+- **Natural Motion**: Spring-based animations that feel responsive and organic
+- **Visual Feedback**: Rich hover states and smooth transitions throughout
+- **Intuitive Navigation**: Easy opening, resizing, and closing with multiple methods
+- **Responsive Design**: Adapts to different screen sizes with proper scaling
+
+**Performance Features:**
+- **Optimized Animations**: Proper easing curves and transition timing
+- **Reduced Motion**: Respects user preferences for motion sensitivity
+- **Efficient Rendering**: Smooth 60fps animations with proper cleanup
+- **Memory Management**: Proper cleanup of event listeners and animations
+
+How to view:
+- Visit `/day-6` in the running app
+- Click any of the 6 trigger cards to open different overlay types
+- Use the size toggle button to resize overlays dynamically
+- Press Esc key or click outside to close overlays
+- Observe the 3D warp effect and particle animations
+- Explore different content types in each overlay
+
+Implementation Notes:
+- Page: `src/app/day-6/page.tsx`
+- Animations: Framer Motion with 3D transforms and spring physics
+- 3D Effects: Advanced CSS transforms for cinematic entrance
+- Performance: Optimized animations with proper state management
+- Accessibility: Full keyboard support and reduced motion preferences
 
 ### Credits
 - Peerlist Logo and challenge content belong to Peerlist.
