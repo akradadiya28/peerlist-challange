@@ -67,13 +67,13 @@ const challengeDays = [
   },
   {
     id: 7,
-    title: "Coming Soon",
-    description: "The next challenge awaits! Stay tuned for more interactive design challenges.",
-    status: "upcoming",
-    difficulty: "TBD",
-    icon: "🏆",
-    path: "#",
-    features: ["Coming soon", "Stay tuned", "More challenges", "Interactive design"]
+    title: "Peerlist Autofill w/ AI",
+    description: "Design an AI-powered form autofill experience with real GitHub API integration. Watch as AI analyzes repositories and intelligently populates project forms.",
+    status: "completed",
+    difficulty: "Advanced",
+    icon: "🤖",
+    path: "/day-7",
+    features: ["GitHub API", "Real data", "AI analysis", "Repository stats"]
   }
 ];
 
